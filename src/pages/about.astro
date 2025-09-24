@@ -4,112 +4,213 @@ import Project from "../components/Project.astro";
 import Sidebar from "../components/Sidebar.astro";
 ---
 
+/* CV */
+const cvCards = [
+  {
+    title: "Curriculum Vitae",
+    desc: [
+      "Download my full CV as a PDF:",
+      "/cv/Jared_Bryan_CV.pdf"
+    ],
+    tech: [
+      "Email: jtbryan@mit.edu",
+      "GitHub: github.com/jaredbryan881",
+      "Google Scholar",
+      "ORCID",
+      "LinkedIn"
+    ]
+  }
+];
+
+/* About Me */
+const aboutCards = [
+  {
+    title: "About Me",
+    desc: [
+      "I’m a PhD candidate in Geophysics at MIT Department of Earth, Atmospheric, and Planetary Sciences."
+    ],
+    tech: []
+  },
+  {
+    title: "Research interests",
+    desc: [
+      "Time-lapse monitoring of fault zones and volcanic systems",
+      "Receiver-function monitoring with optimal transport",
+      "Tidal asteroseismology and resonance locking in migrating exoplanet systems",
+      "Seismo-geodetic instrumentation"
+    ],
+    tech: []
+  }
+];
+
+/* Education */
+const educationCards = [
+  {
+    title: "Education",
+    desc: [
+      "Massachusetts Institute of Technology — Ph.D., Geophysics (EAPS), 2020–2025 (expected), Cambridge, MA",
+      "Utah State University — B.Sc. Geosciences; B.Sc. Physics (Geophysics emphasis); Minor in Mathematics; Summa Cum Laude"
+    ],
+    tech: []
+  }
+];
+
+/* Awards */
+const awardsCards = [
+  {
+    title: "Awards",
+    desc: [
+      "MIT Sandbox — Open-source nodal seismogeodetic instrumentation (2024)",
+      "MIT EAPS Student Research Funding — Open-source nodal seismometer (2024)",
+      "SSA Global Travel Grant — Receiver-function monitoring at Mount St. Helens (2021)",
+      "MIT Presidential Fellowship (2020)",
+      "MIT School of Science Fellowship (2020)",
+      "NSF Graduate Research Fellowship (2020)",
+      "USU Scholar of the Year (2020)",
+      "USU College of Science Minigrant — San Andreas Fault mechanics (2019)",
+      "USU URCO Grant — Flexural stresses & seismicity distributions (2018)"
+    ],
+    tech: []
+  }
+];
+
+/* Service */
+const serviceCards = [
+  {
+    title: "Departmental",
+    desc: [
+      "Chair, Graduate Student Advisory Group — Climate & Renewable Energy faculty search (2024)",
+      "MIT EAPS pre-generals graduate student peer mentor (2024–2025)",
+      "MIT EAPS graduate application peer mentor (2023–2025)"
+    ],
+    tech: []
+  },
+  {
+    title: "Professional",
+    desc: [
+      "AGU Fall Meeting: Session convenor (2025, upcoming); Session chair (2024)",
+      "Reviewer: Seismological Research Letters (2024–2025); Communications Earth & Environment (2025)"
+    ],
+    tech: []
+  },
+  {
+    title: "Outreach",
+    desc: [
+      "Citizen-science seismic monitoring with the Center for Coalfield Justice (PA/WV, 2025)",
+      "LINK12 volunteer presenter (2020–2022); USU Blanding summer program volunteer instructor (2020)"
+    ],
+    tech: []
+  }
+];
+
+/* Invited Talks */
+const invitedCards = [
+  {
+    title: "Seminars & Colloquia",
+    desc: [
+      "USGS Earthquake Science Center (2025; upcoming)",
+      "Berkeley Seismology Lab (2025; upcoming)",
+      "Lamont-Doherty Earth Observatory (2025; upcoming)",
+      "ERC TECTONIC seminar (2025)",
+      "Brown University — DEEPS (2024)",
+      "ULB Institute for Astronomy & Astrophysics (2024)",
+      "Georgia Tech — Earth & Planetary Sciences (2023)",
+      "Friedrich Schiller University Jena — Mathematics & Informatics (2021)"
+    ],
+    tech: []
+  },
+  {
+    title: "Conference Presentations (Invited)",
+    desc: [
+      "AGU Fall Meeting (T016, 2025; upcoming): Crustal stresses & damage over the seismic cycle — Ridgecrest",
+      "AGU Fall Meeting (T002, 2025; upcoming): Seismic anisotropy & hydrological loading in fault zones"
+    ],
+    tech: []
+  }
+];
+---
+
+<!DOCTYPE html>
 <html>
-  <Header title="About Me" />
+  <Header title="About | Jared Bryan" />
   <body>
     <div class="content">
       <Sidebar selectedItem="about" />
-      <main class="main">
-        <div class="container" style="max-width: 900px;">
-          <!-- CV -->
-          <section style="margin: 1.5rem 0;">
-            <h1>CV</h1>
-            <p>
-              Download my full CV as a PDF:
-              <a class="button w-button" href="/cv/Jared_Bryan_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
-            </p>
-          </section>
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block">
+              <img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
+              <div>Back</div>
+            </a>
+          </div>
 
-          <!-- About Me -->
-          <section style="margin: 2rem 0;">
+          <div class="content-container">
+            <h1>About</h1>
+
+            <!-- CV -->
+            <h2>CV</h2>
+            <section class="items-container">
+              <div class="resouce-items">
+                {cvCards.map(item => (
+                  <Project title={item.title} desc={item.desc} tech={item.tech} />
+                ))}
+              </div>
+            </section>
+
+            <!-- About Me -->
             <h2>About Me</h2>
-            <p class="lead">
-              I’m a PhD candidate in Geophysics at MIT Department of Earth, Atmospheric, and Planetary Sciences studying how fault zones and
-              volcanoes evolve through time. 
-              I develop time-lapse seismo-geodetic monitoring techniques—including receiver function methods to track changes in seismic velocity and anisotropy throughout the crust. 
-              I've studied Mount St. Helens and the 2019 Ridgecrest sequence. 
-              In parallel, I study tidal asteroseismology, linking planet-driven stellar oscillations to orbital evolution. 
-              I also design field-ready instrumentation and low-power electronics for dense, long-duration deployments.
-            </p>
+            <section class="items-container">
+              <div class="resouce-items">
+                {aboutCards.map(item => (
+                  <Project title={item.title} desc={item.desc} tech={item.tech} />
+                ))}
+              </div>
+            </section>
 
-            <h3 style="margin-top:1rem;">Research interests</h3>
-            <ul>
-              <li>Time-lapse monitoring of fault zones and volcanic systems</li>
-              <li>Receiver-function monitoring with optimal transport</li>
-              <li>Tidal asteroseismology and resonance locking in migrating exoplanet systems</li>
-              <li>Seismo-geodetic instrumentation</li>
-            </ul>
-          </section>
-
-          <!-- Education -->
-          <section style="margin: 2rem 0;">
+            <!-- Education -->
             <h2>Education</h2>
-            <ul>
-              <li><strong>Massachusetts Institute of Technology</strong> — Ph.D., Geophysics (EAPS), 2020–2025 (expected), Cambridge, MA</li>
-              <li><strong>Utah State University</strong> — B.Sc. Geosciences; B.Sc. Physics (Geophysics emphasis); Minor in Mathematics; <em>Summa Cum Laude</em></li>
-            </ul>
-          </section>
+            <section class="items-container">
+              <div class="resouce-items">
+                {educationCards.map(item => (
+                  <Project title={item.title} desc={item.desc} tech={item.tech} />
+                ))}
+              </div>
+            </section>
 
-          <!-- Awards -->
-          <section style="margin: 2rem 0;">
+            <!-- Awards -->
             <h2>Awards</h2>
-            <ul>
-              <li>MIT Presidential Fellowship (2020)</li>
-              <li>MIT School of Science Fellowship (2020)</li>
-              <li>NSF Graduate Research Fellowship (2020)</li>
-              <li>USU Scholar of the Year (2020)</li>
-              <li>SSA Global Travel Grant — Receiver-function monitoring at Mount St. Helens (2021)</li>
-              <li>MIT Sandbox — Open-source nodal seismogeodetic instrumentation (2024)</li>
-              <li>MIT EAPS Student Research Funding — Open-source nodal seismometer (2024)</li>
-              <li>USU College of Science Minigrant — San Andreas Fault mechanics (2019)</li>
-              <li>USU URCO Grant — Flexural stresses & seismicity distributions (2018)</li>
-            </ul>
-          </section>
+            <section class="items-container">
+              <div class="resouce-items">
+                {awardsCards.map(item => (
+                  <Project title={item.title} desc={item.desc} tech={item.tech} />
+                ))}
+              </div>
+            </section>
 
-          <!-- Service -->
-          <section style="margin: 2rem 0;">
+            <!-- Service -->
             <h2>Service</h2>
-            <h3>Departmental</h3>
-            <ul>
-              <li>Chair, Graduate Student Advisory Group — Climate & Renewable Energy faculty search (2024)</li>
-              <li>MIT EAPS pre-generals graduate student peer mentor (2024–2025)</li>
-              <li>MIT EAPS graduate application peer mentor (2023–2025)</li>
-            </ul>
-            <h3>Professional</h3>
-            <ul>
-              <li>AGU Fall Meeting: Session convenor (2025, upcoming); Session chair (2024)</li>
-              <li>Reviewer: <em>Seismological Research Letters</em> (2024–2025); <em>Communications Earth & Environment</em> (2025)</li>
-            </ul>
-            <h3>Outreach</h3>
-            <ul>
-              <li>Citizen-science seismic monitoring with the Center for Coalfield Justice (PA/WV, 2025)</li>
-              <li>LINK12 volunteer presenter (2020–2022); USU Blanding summer program volunteer instructor (2020)</li>
-            </ul>
-          </section>
+            <section class="items-container">
+              <div class="resouce-items">
+                {serviceCards.map(item => (
+                  <Project title={item.title} desc={item.desc} tech={item.tech} />
+                ))}
+              </div>
+            </section>
 
-          <!-- Invited Talks -->
-          <section style="margin: 2rem 0;">
+            <!-- Invited Talks -->
             <h2>Invited Talks</h2>
-            <h3>Seminars & Colloquia</h3>
-            <ul>
-              <li>USGS Earthquake Science Center (2025; upcoming)</li>
-              <li>Berkeley Seismology Lab (2025; upcoming)</li>
-              <li>Lamont-Doherty Earth Observatory (2025; upcoming)</li>
-              <li>ERC TECTONIC seminar (2025)</li>
-              <li>Brown University — DEEPS (2024)</li>
-              <li>ULB Institute for Astronomy & Astrophysics (2024)</li>
-              <li>Georgia Tech — Earth & Planetary Sciences (2023)</li>
-              <li>Friedrich Schiller University Jena — Mathematics & Informatics (2021)</li>
-            </ul>
+            <section class="items-container">
+              <div class="resouce-items">
+                {invitedCards.map(item => (
+                  <Project title={item.title} desc={item.desc} tech={item.tech} />
+                ))}
+              </div>
+            </section>
 
-            <h3>Conference Presentations (Invited)</h3>
-            <ul>
-              <li>AGU Fall Meeting (T016, 2025; upcoming): Crustal stresses & damage over the seismic cycle — Ridgecrest</li>
-              <li>AGU Fall Meeting (T002, 2025; upcoming): Seismic anisotropy & hydrological loading in fault zones</li>
-            </ul>
-          </section>
+          </div>
         </div>
-      </main>
+      </nav>
     </div>
   </body>
 </html>
