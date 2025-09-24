@@ -24,7 +24,7 @@ import Sidebar from "../components/Sidebar.astro";
 
             <div class="button-row" style="display:flex; gap:.5rem; flex-wrap:wrap;">
               <a href="mailto:jtbryan@mit.edu" class="button w-button" aria-label="Email Jared">Contact</a>
-              <a href=https://github.com/jaredbryan881" class="button w-button" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+              <a href="https://github.com/jaredbryan881" class="button w-button" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
               <a href="https://www.linkedin.com/in/jared-bryan-6a55b213a" class="button w-button" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
               <a href="https://scholar.google.com/citations?user=w-QWLhoAAAAJ&hl=en" class="button w-button" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">Scholar</a>
               <a href="https://orcid.org/0000-0001-9466-1843" class="button w-button" target="_blank" rel="noopener noreferrer" aria-label="ORCID">ORCID</a>
@@ -46,14 +46,17 @@ import Sidebar from "../components/Sidebar.astro";
             </a>
 
             <!-- Research -->
-            <a href="/research" class="projects-container">
+            <div class="projects-container">
               <div class="single-projects-category">
-                <div class="projects-category-image-container">
-                  <img src="./assets/browser.svg" loading="lazy" alt="" class="projects-category-image" />
-                </div>
+                <a href="/research" class="projects-category-image-link" aria-label="Research">
+                  <div class="projects-category-image-container">
+                    <img src="./assets/browser.svg" loading="lazy" alt="Research" class="projects-category-image" />
+                  </div>
+                </a>
               </div>
+
               <div class="single-projects-content">
-                <h4>Research</h4>
+                <h4><a href="/research"</a>Research</h4>
                 <div class="tech-tools-container">
                   <div class="chips-container chips-container-small-width">
                     <a class="single-chip small-chip" href="/research/fault-zones/">Fault Zones</a>
@@ -63,7 +66,7 @@ import Sidebar from "../components/Sidebar.astro";
                   </div>
                 </div>
               </div>
-            </a>
+            </div>
 
             <!-- Publications -->
             <a href="/publications" class="projects-container">
