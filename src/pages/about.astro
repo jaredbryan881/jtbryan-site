@@ -11,8 +11,25 @@ import Sidebar from "../components/Sidebar.astro";
       <Sidebar selectedItem="about" />
       <main class="main">
         <div class="container" style="max-width: 900px;">
-          <header class="fold-content" style="margin-bottom: 1.5rem;">
-            <h1>About Me</h1>
+          <!-- CV -->
+          <section style="margin: 1.5rem 0;">
+            <h1>CV</h1>
+            <p>
+              Download my full CV as a PDF:
+              <a class="button w-button" href="/cv/Jared_Bryan_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+            </p>
+            <div style="display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.5rem;">
+              <a class="button w-button" href="mailto:jtbryan@mit.edu">Email</a>
+              <a class="button w-button" href="https://github.com/jaredbryan881" target="_blank" rel="noopener">GitHub</a>
+              <a class="button w-button" href="https://scholar.google.com/citations?user=w-QWLhoAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+              <a class="button w-button" href="https://orcid.org/0000-0001-9466-1843" target="_blank" rel="noopener">ORCID</a>
+              <a class="button w-button" href="https://www.linkedin.com/in/jared-bryan-6a55b213a" target="_blank" rel="noopener">LinkedIn/a>
+            </div>
+          </section>
+
+          <!-- About Me -->
+          <section style="margin: 2rem 0;">
+            <h2>About Me</h2>
             <p class="lead">
               I’m a PhD candidate in Geophysics at MIT Department of Earth, Atmospheric, and Planetary Sciences studying how fault zones and
               volcanoes evolve through time. 
@@ -21,51 +38,83 @@ import Sidebar from "../components/Sidebar.astro";
               In parallel, I study tidal asteroseismology, linking planet-driven stellar oscillations to orbital evolution. 
               I also design field-ready instrumentation and low-power electronics for dense, long-duration deployments.
             </p>
-          </header>
 
+            <h3 style="margin-top:1rem;">Research interests</h3>
+            <ul>
+              <li>Time-lapse monitoring of fault zones and volcanic systems</li>
+              <li>Receiver-function monitoring with optimal transport</li>
+              <li>Tidal asteroseismology and resonance locking in migrating exoplanet systems</li>
+              <li>Seismo-geodetic instrumentation</li>
+            </ul>
+          </section>
+
+          <!-- Education -->
           <section style="margin: 2rem 0;">
             <h2>Education</h2>
             <ul>
-              <li><strong>MIT</strong> — Ph.D., Geophysics, EAPS (2020–2025, expected).</li>
-              <li><strong>Utah State University</strong> — B.Sc. Geosciences; B.Sc. Physics (Geophysics); Minor in Math (Summa Cum Laude).</li>
+              <li><strong>Massachusetts Institute of Technology</strong> — Ph.D., Geophysics (EAPS), 2020–2025 (expected), Cambridge, MA</li>
+              <li><strong>Utah State University</strong> — B.Sc. Geosciences; B.Sc. Physics (Geophysics emphasis); Minor in Mathematics; <em>Summa Cum Laude</em></li>
             </ul>
           </section>
 
+          <!-- Awards -->
           <section style="margin: 2rem 0;">
-            <h2>Invited Talks</h2>
+            <h2>Awards</h2>
             <ul>
-              <li>AGU Fall Meeting Session T016 (upcoming, 2025)</li>
-              <li>AGU Fall Meeting Session T002 (upcoming, 2025)</li>
-              <li>USGS Earthquake Science Center (upcoming, 2025)</li>
-              <li>Berkeley Seismology Lab (upcoming, 2025)</li>
-              <li>Lamont-Doherty Earth Observatory (upcoming, 2025)</li>
-              <li>ERC TECTONIC Seminar (2025)</li>
-              <li>Brown University — DEEPS (2024)</li>
-              <li>Universite Libre de Bruxelles (2024)</li>
-              <li>Georgia Institute of Technology - EPS (2023)</li>
-              <li>Friedrich Schiller University Jena - Mathematics and Informatics (2021)</li>
-            </ul>
-          </section>
-
-          <section style="margin: 2rem 0;">
-            <h2>Grants, Fellowships & Awards</h2>
-            <ul>
-              <li>MIT Presidential & School of Science Fellowships (2020)</li>
+              <li>MIT Presidential Fellowship (2020)</li>
+              <li>MIT School of Science Fellowship (2020)</li>
               <li>NSF Graduate Research Fellowship (2020)</li>
               <li>USU Scholar of the Year (2020)</li>
-              <li>MIT Sandbox & EAPS Research Funding for open seismo-geodetic instrumentation (2024)</li>
+              <li>SSA Global Travel Grant — Receiver-function monitoring at Mount St. Helens (2021)</li>
+              <li>MIT Sandbox — Open-source nodal seismogeodetic instrumentation (2024)</li>
+              <li>MIT EAPS Student Research Funding — Open-source nodal seismometer (2024)</li>
+              <li>USU College of Science Minigrant — San Andreas Fault mechanics (2019)</li>
+              <li>USU URCO Grant — Flexural stresses & seismicity distributions (2018)</li>
             </ul>
           </section>
 
+          <!-- Service -->
           <section style="margin: 2rem 0;">
-            <h2>Service & Outreach</h2>
+            <h2>Service</h2>
+            <h3>Departmental</h3>
             <ul>
-              <li>AGU Session Convener/Chair (2024–2025)</li>
-              <li>Reviewer: <em>SRL</em>; <em>Communications Earth & Environment</em> (2024–2025)</li>
+              <li>Chair, Graduate Student Advisory Group — Climate & Renewable Energy faculty search (2024)</li>
+              <li>MIT EAPS pre-generals graduate student peer mentor (2024–2025)</li>
+              <li>MIT EAPS graduate application peer mentor (2023–2025)</li>
+            </ul>
+            <h3>Professional</h3>
+            <ul>
+              <li>AGU Fall Meeting: Session convenor (2025, upcoming); Session chair (2024)</li>
+              <li>Reviewer: <em>Seismological Research Letters</em> (2024–2025); <em>Communications Earth & Environment</em> (2025)</li>
+            </ul>
+            <h3>Outreach</h3>
+            <ul>
               <li>Citizen-science seismic monitoring with the Center for Coalfield Justice (PA/WV, 2025)</li>
+              <li>LINK12 volunteer presenter (2020–2022); USU Blanding summer program volunteer instructor (2020)</li>
             </ul>
           </section>
 
+          <!-- Invited Talks -->
+          <section style="margin: 2rem 0;">
+            <h2>Invited Talks</h2>
+            <h3>Seminars & Colloquia</h3>
+            <ul>
+              <li>USGS Earthquake Science Center (2025; upcoming)</li>
+              <li>Berkeley Seismology Lab (2025; upcoming)</li>
+              <li>Lamont-Doherty Earth Observatory (2025; upcoming)</li>
+              <li>ERC TECTONIC seminar (2025)</li>
+              <li>Brown University — DEEPS (2024)</li>
+              <li>ULB Institute for Astronomy & Astrophysics (2024)</li>
+              <li>Georgia Tech — Earth & Planetary Sciences (2023)</li>
+              <li>Friedrich Schiller University Jena — Mathematics & Informatics (2021)</li>
+            </ul>
+
+            <h3>Conference Presentations (Invited)</h3>
+            <ul>
+              <li>AGU Fall Meeting (T016, 2025; upcoming): Crustal stresses & damage over the seismic cycle — Ridgecrest</li>
+              <li>AGU Fall Meeting (T002, 2025; upcoming): Seismic anisotropy & hydrological loading in fault zones</li>
+            </ul>
+          </section>
         </div>
       </main>
     </div>
