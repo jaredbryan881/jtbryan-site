@@ -42,6 +42,25 @@ const { selectedItem } = Astro.props;
         />
         <div>Home</div>
       </a>
+
+      <a
+        href="/about"
+        class={`nav-link-container w-inline-block ${
+          selectedItem === 'about' ? 'w--current' : ''
+        }`}
+        aria-current={
+          selectedItem === 'about' ? 'page' : undefined
+        }
+      >
+        <img
+          src="/assets/code.svg"
+          loading="eager"
+          alt=""
+          class="nav-link-image"
+        />
+        <div>About Me</div>
+      </a>
+
       <a
         href="/research"
         class={`nav-link-container w-inline-block ${
@@ -59,6 +78,7 @@ const { selectedItem } = Astro.props;
         />
         <div>Research</div>
       </a>
+
       <a
         href="/publications"
         class={`nav-link-container w-inline-block ${
@@ -73,6 +93,7 @@ const { selectedItem } = Astro.props;
         />
         <div>Publications</div>
       </a>
+
       <a
         href="/personal-projects"
         class={`nav-link-container w-inline-block ${

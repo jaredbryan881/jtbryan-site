@@ -21,9 +21,30 @@ import Sidebar from "../components/Sidebar.astro";
                 I study earthquakes and volcanoes with seismic and geodetic techniques. I also study asteroseismology. I am interested in instrumentation.
               </p>
             </div>
-            <a href="mailto:jtbryan@mit.edu	" class="button w-button">Contact</a>
+
+            <div class="button-row" style="display:flex; gap:.5rem; flex-wrap:wrap;">
+              <a href="mailto:jtbryan@mit.edu" class="button w-button" aria-label="Email Jared">Contact</a>
+              <a href=https://github.com/jaredbryan881" class="button w-button" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+              <a href="https://www.linkedin.com/in/jared-bryan-6a55b213a" class="button w-button" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+              <a href="https://scholar.google.com/citations?user=w-QWLhoAAAAJ&hl=en" class="button w-button" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">Scholar</a>
+              <a href="https://orcid.org/0000-0001-9466-1843" class="button w-button" target="_blank" rel="noopener noreferrer" aria-label="ORCID">ORCID</a>
+            </div>
           </main>
+
           <div class="projects-section">
+            <!-- About Me -->
+            <a href="/about" class="projects-container">
+              <div class="single-projects-category">
+                <div class="projects-category-image-container">
+                  <img src="./assets/database.svg" loading="lazy" alt="About Jared" class="projects-category-image" />
+                </div>
+              </div>
+              <div class="single-projects-content">
+                <h4>About Me</h4>
+                <div class="mini-label-white gray-color">Background, CV</div>
+              </div>
+            </a>
+
             <!-- Research -->
             <a href="/research" class="projects-container">
               <div class="single-projects-category">
@@ -34,28 +55,38 @@ import Sidebar from "../components/Sidebar.astro";
               <div class="single-projects-content">
                 <h4>Research</h4>
                 <div class="tech-tools-container">
-                  <div class="mini-label-white gray-color">Technologies &amp; tools</div>
                   <div class="chips-container chips-container-small-width">
-                    <div class="single-chip small-chip">Receiver Functions</div>
+                    <a class="single-chip small-chip" href="/research/fault-zones/">Fault Zones</a>
+                    <a class="single-chip small-chip" href="/research/volcanoes/">Volcanoes</a>
+                    <a class="single-chip small-chip" href="/research/induced-seismicity/">Induced Seismicity</a>
+                    <a class="single-chip small-chip" href="/research/asteroseismology/">Asteroseismology</a>
                   </div>
                 </div>
               </div>
             </a>
+
             <!-- Publications -->
             <a href="/publications" class="projects-container">
               <div class="single-projects-category">
                 <div class="projects-category-image-container devops-img">
-                  <img src="./assets/database.svg" loading="lazy" alt="" class="projects-category-image" />
+                  <img src="./assets/database.svg" loading="lazy" alt="Publications section" class="projects-category-image" />
                 </div>
               </div>
               <div class="single-projects-content">
                 <h4>Publications</h4>
-                <div class="tech-tools-container">
-                  <div class="mini-label-white gray-color">Technologies &amp; tools</div>
-                  <div class="chips-container chips-container-small-width">
-                    <div class="single-chip small-chip">Receiver Functions</div>
-                  </div>
+              </div>
+            </a>
+
+            <!-- Personal Projects (blog) -->
+            <a href="/personal-projects" class="projects-container">
+              <div class="single-projects-category">
+                <div class="projects-category-image-container">
+                  <img src="./assets/database.svg" loading="lazy" alt="Personal projects" class="projects-category-image" />
                 </div>
+              </div>
+              <div class="single-projects-content">
+                <h4>Personal Projects</h4>
+                <div class="mini-label-white gray-color">One-offs, experiments, notes</div>
               </div>
             </a>
           </div>
