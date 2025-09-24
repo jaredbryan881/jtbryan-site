@@ -2,71 +2,72 @@
 import Header from '../components/Header.astro';
 import Project from "../components/Project.astro";
 import Sidebar from "../components/Sidebar.astro";
-const projects = [
-  {
-    title: "NetCare",
-    desc: [
-      "Built an infrastructure for a telemedicine startup focusing on remote patient monitoring",
-      "Created Azure environment from scratch using Terraform as a IaC tool",
-      "Developed a comprehensive CI/CD pipeline for mobile app deployment",
-    ],
-    tech: ["Terraform", "Azure", "Docker", "Nginx", "GitLab CI/CD"]
-  },
-  {
-    title: "DataMesh",
-    desc: [
-      "Built an infrastructure for a data analytics platform",
-      "Configured VMs and deployed a multi-node Kubernetes cluster on AWS",
-      "Designed to handle a high volume of ~5 million data points per day",
-      "Integrated Grafana and Prometheus for monitoring",
-    ],
-    tech: ["Docker", "Kubernetes", "AWS", "Node.js", "RabbitMQ"]
-  },
-  {
-    title: "CloudEase",
-    desc: [
-      "Migrated a cloud-based CRM system from one provider to another",
-      "Built the new GCP infrastructure using Terraform as a IaC tool",
-      "Deployed logging and monitoring tools in GKE cluster",
-    ],
-    tech: ["GCP", "Terraform", "Kubernetes", "GitLab"]
-  }
-];
 ---
 
-<!DOCTYPE html>
-<html
->
-  <Header title="About Me | Jared Bryan" />
+<html>
+  <Header title="About Me" />
   <body>
     <div class="content">
-        <Sidebar selectedItem="devops" />
-      <nav class="main">
-        <div class="container">
-          <div class="back-nav-container">
-            <a href="/" class="back-nav-button w-inline-block"
-              ><img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
-              <div>Back</div></a
-            >
-          </div>
-          <div class="content-container">
-            <h1>DevOps</h1>
-            <section class="items-container">
-                <div class="resouce-items">
-                    {projects.map(project => (
-                      <Project 
-                        title={project.title} 
-                        desc={project.desc}
-                        tech={project.tech}
-                      />
-                    ))}
-                  </div>
-            </section>
-          </div>
-        </div>
-      </nav>
-    </div>
+      <Sidebar selectedItem="about" />
+      <main class="main">
+        <div class="container" style="max-width: 900px;">
+          <header class="fold-content" style="margin-bottom: 1.5rem;">
+            <h1>About Me</h1>
+            <p class="lead">
+              I’m a PhD candidate in Geophysics at MIT Department of Earth, Atmospheric, and Planetary Sciences studying how fault zones and
+              volcanoes evolve through time. 
+              I develop time-lapse seismo-geodetic monitoring techniques—including receiver function methods to track changes in seismic velocity and anisotropy throughout the crust. 
+              I've studied Mount St. Helens and the 2019 Ridgecrest sequence. 
+              In parallel, I study tidal asteroseismology, linking planet-driven stellar oscillations to orbital evolution. 
+              I also design field-ready instrumentation and low-power electronics for dense, long-duration deployments.
+            </p>
+          </header>
 
-    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+          <section style="margin: 2rem 0;">
+            <h2>Education</h2>
+            <ul>
+              <li><strong>MIT</strong> — Ph.D., Geophysics, EAPS (2020–2025, expected).</li>
+              <li><strong>Utah State University</strong> — B.Sc. Geosciences; B.Sc. Physics (Geophysics); Minor in Math (Summa Cum Laude).</li>
+            </ul>
+          </section>
+
+          <section style="margin: 2rem 0;">
+            <h2>Invited Talks</h2>
+            <ul>
+              <li>AGU Fall Meeting Session T016 (upcoming, 2025)</li>
+              <li>AGU Fall Meeting Session T002 (upcoming, 2025)</li>
+              <li>USGS Earthquake Science Center (upcoming, 2025)</li>
+              <li>Berkeley Seismology Lab (upcoming, 2025)</li>
+              <li>Lamont-Doherty Earth Observatory (upcoming, 2025)</li>
+              <li>ERC TECTONIC Seminar (2025)</li>
+              <li>Brown University — DEEPS (2024)</li>
+              <li>Universite Libre de Bruxelles (2024)</li>
+              <li>Georgia Institute of Technology - EPS (2023)</li>
+              <li>Friedrich Schiller University Jena - Mathematics and Informatics (2021)</li>
+            </ul>
+          </section>
+
+          <section style="margin: 2rem 0;">
+            <h2>Grants, Fellowships & Awards</h2>
+            <ul>
+              <li>MIT Presidential & School of Science Fellowships (2020)</li>
+              <li>NSF Graduate Research Fellowship (2020)</li>
+              <li>USU Scholar of the Year (2020)</li>
+              <li>MIT Sandbox & EAPS Research Funding for open seismo-geodetic instrumentation (2024)</li>
+            </ul>
+          </section>
+
+          <section style="margin: 2rem 0;">
+            <h2>Service & Outreach</h2>
+            <ul>
+              <li>AGU Session Convener/Chair (2024–2025)</li>
+              <li>Reviewer: <em>SRL</em>; <em>Communications Earth & Environment</em> (2024–2025)</li>
+              <li>Citizen-science seismic monitoring with the Center for Coalfield Justice (PA/WV, 2025)</li>
+            </ul>
+          </section>
+
+        </div>
+      </main>
+    </div>
   </body>
 </html>
